@@ -14,7 +14,7 @@ loginForm.addEventListener('submit', (event) => {
       const storedPassword = data[username];
       
       if (storedPassword === password) {
-        window.location.href = 'main.html';
+        window.location.href = 'assets/main.html';
       } else {
         alert('Invalid username or password. Please try again.');
       }
