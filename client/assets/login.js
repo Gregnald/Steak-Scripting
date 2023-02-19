@@ -8,7 +8,7 @@ loginForm.addEventListener('submit', (event) => {
   const username = usernameInput.value;
   const password = passwordInput.value;
   
-  fetch('log.json')
+  fetch('client/log.json')
     .then(response => response.json())
     .then(data => {
       const storedPassword = data[username];
