@@ -4,55 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steak - The Scriptor</title>
+    <title>Steak - The Geek</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="login_container">
-      <form id="login_form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <button type="submit">Log In</button>
-      </form>
+    <div id="app">
+      <div id="login_container">
+        <h1>Login</h1>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
 
-    <div id="app" style="display:none;">
-      <div id="chat_container"></div>
-
-      <form>
-        <textarea name="prompt" rows="1" cols="1" placeholder="Let's Script...."></textarea>
-        <button type="submit"><img src="assets/send.svg" alt="send" />
-      </form>
-    </div>
-
-    <script type="module" src="script.js"></script>
-    <script>
-      const loginForm = document.getElementById("login_form");
-      const appContainer = document.getElementById("app");
-
-      loginForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        const username = loginForm.elements.username.value;
-        const password = loginForm.elements.password.value;
-
-        // Use fetch to get the credentials from log.json file
-        fetch("log.json")
-          .then(response => response.json())
-          .then(data => {
-            if (data[username] && data[username] === password) {
-              loginForm.style.display = "none";
-              appContainer.style.display = "block";
-            } else {
-              alert("Incorrect username or password. Please try again.");
-            }
-          })
-          .catch(error => {
-            console.error(error);
-            alert("There was an error logging in. Please try again later.");
-          });
-      });
-    </script>
+    <script src="login.js"></script>
   </body>
 </html>
