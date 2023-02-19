@@ -1,23 +1,20 @@
-let users = [
-  {username: "user1", password: "pass1"},
-  {username: "user2", password: "pass2"},
-  {username: "user3", password: "pass3"}
-];
+const users = {
+  user1: 'password1',
+  user2: 'password2',
+  user3: 'password3'
+};
 
 function login() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-  for (let i = 0; i < users.length; i++) {
-    if (username === users[i].username && password === users[i].password) {
-      console.log("Login successful!");
-      window.location.href = "main.html";
-      return;
-    }
+  if (username in users && users[username] === password) {
+    window.location.href = 'index.html';
+  } else {
+    alert('Invalid username or password');
   }
-
-  console.log("Login failed. Please check your username and password.");
 }
+
 
 
 
