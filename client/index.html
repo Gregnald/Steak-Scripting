@@ -9,20 +9,14 @@
   </head>
   <body>
     <div id="app">
-      <div id="login_container">
-        <h1>Login</h1>
-        <form>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required>
+      <div id="chat_container"></div>
 
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-
-          <button type="submit">Login</button>
-        </form>
-      </div>
+      <form>
+        <textarea name="prompt" rows="1" cols="1" placeholder="Ask Steak...."></textarea>
+        <button type="submit"><img src="assets/send.svg" alt="send" />
+      </form>
     </div>
 
-    <script type="module" src="assets/login.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
